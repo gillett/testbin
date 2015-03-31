@@ -31,8 +31,8 @@ func _fixed_process(delta):
 			bi.set_pos(_barrel_tip_pos())
 			get_parent().get_parent().add_child(bi)
 			# set random values for spray effect
-			mouse_pos.x = mouse_pos.x + rand_range(-30,30)
-			mouse_pos.y = mouse_pos.y + rand_range(-30, 30)
+			mouse_pos.x = mouse_pos.x + rand_range(-20,20)
+			mouse_pos.y = mouse_pos.y + rand_range(-20, 20)
 
 			bi.set_linear_velocity((mouse_pos - ship_pos).normalized() * bullet_speed)
 
