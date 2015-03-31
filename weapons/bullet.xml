@@ -3,7 +3,7 @@
 	<ext_resource path="res://weapons/bullet.gd" type="Script"></ext_resource>
 	<resource type="RectangleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 8, 8 </vector2>
+		<vector2 name="extents"> 5, 5 </vector2>
 
 	</resource>
 	<main_resource>
@@ -66,7 +66,7 @@
 			<string> "node_count" </string>
 			<int> 3 </int>
 			<string> "variants" </string>
-			<array  len="19" shared="false">
+			<array  len="20" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -76,7 +76,7 @@
 				<vector2> 1, 1 </vector2>
 				<int> 0 </int>
 				<resource  resource_type="Shape2D" path="local://1">  </resource>
-				<matrix32> 1, 0, 0, 1, 0, 0 </matrix32>
+				<matrix32> 1, -0, 0, 1, 0, 0 </matrix32>
 				<bool> False </bool>
 				<real> -1 </real>
 				<resource  resource_type="Script" path="res://weapons/bullet.gd">  </resource>
@@ -86,7 +86,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 1 </int>
+							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="3" shared="false">
 								<string> "res://weapons/bullet.gd" </string>
@@ -208,15 +208,16 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 				</dictionary>
+				<vector2> 0.5, 0.5 </vector2>
 				<vector2_array  len="4"> 					-7.65784, -7.04744, -7.65784, 6.90408, 7.15224, 7.548, 7.58151, -7.906 </vector2_array>
 				<vector2_array  len="0"> 					 </vector2_array>
 				<color> 1, 1, 1, 1 </color>
 				<resource name=""></resource>				<real> 100 </real>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="151"> 				-1, -1, 0, 0, -1, 32, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 11, 3, 12, 8, 13, 9, 14, 10, 15, 3, 16, 7, 17, 2, 18, 2, 19, 5, 20, 2, 21, 10, 22, 7, 23, 7, 24, 10, 25, 10, 26, 1, 27, 4, 28, 5, 29, 11, 30, 11, 31, 12, 32, 13, 0, 0, 0, 33, 33, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 34, 14, 35, 15, 36, 16, 37, 4, 38, 17, 39, 4, 40, 6, 41, 5, 42, 1, 43, 10, 44, 18, 0, 0, 0, 45, 45, -1, 12, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 46, 8, 47, 10, 0 </int_array>
+			<int_array  len="151"> 				-1, -1, 0, 0, -1, 32, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 11, 3, 12, 8, 13, 9, 14, 10, 15, 3, 16, 7, 17, 2, 18, 2, 19, 5, 20, 2, 21, 10, 22, 7, 23, 7, 24, 10, 25, 10, 26, 1, 27, 4, 28, 5, 29, 11, 30, 11, 31, 12, 32, 13, 0, 0, 0, 33, 33, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 14, 9, 7, 10, 1, 34, 15, 35, 16, 36, 17, 37, 4, 38, 18, 39, 4, 40, 6, 41, 5, 42, 1, 43, 10, 44, 19, 0, 0, 0, 45, 45, -1, 12, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 46, 8, 47, 10, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>

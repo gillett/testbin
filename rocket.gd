@@ -4,15 +4,15 @@ extends Node2D
 var spike_class = preload("res://enemies/spike_box.gd")
 var input_states = preload("res://input_states.gd")
 
-export var player_speed = 600
-export var acceleration = 400
+export var player_speed = 0
+export var acceleration = 0
 export var thrust_acceleration = float(0.00)
 export var thrust_speed = 0
 var current_speed = Vector2(0,0)
 var current_thrust = Vector2(0,0)
 var current_gravity = Vector2(0,0)
 export var winds = float(20.0)
-export var extra_gravity = 1000
+export var extra_gravity = 0
 
 var raycast_down = null
 
@@ -37,7 +37,7 @@ func _ready():
 	raycast_down = get_node("RayCast2D")
 	raycast_down.add_exception(self)
 
-	set_applied_force(Vector2(0, extra_gravity))
+	#set_applied_force(Vector2(0, extra_gravity))
 	set_process_input(true)
 			
 

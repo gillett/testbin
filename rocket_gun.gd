@@ -12,23 +12,32 @@ export var ship_pos = Vector2(0,0)
 var mouseX 
 var mouseY 
 var shooting = false
+var bullet_speed = 800
+var last_shot = .5
 
 
 func _fixed_process(delta):
 	ship_pos = get_parent().get_pos()
 	var mouse_pos = get_viewport_transform().affine_inverse().xform(Input.get_mouse_pos())
 	
-	mouseX = lerp(mouseX, mouse_pos.x, 0.3)
-	mouseY = lerp(mouseY, mouse_pos.y, 0.3)
+	mouseX = lerp(mouseX, mouse_pos.x, 0.2)
+	mouseY = lerp(mouseY, mouse_pos.y, 0.2)
 	gun_angle = ship_pos.angle_to_point(Vector2(mouseX, mouseY))
 	
-	if Input.is_action_pressed("main_gun") && shooting == false:
-		var bi = bullet.instance()
-		bi.set_pos(_barrel_tip_pos())
-		print(bi)
-		get_parent().get_parent().add_child(bi)
-		bi.set_angular_velocity(gun_angle + (4000 *delta))
-	 
+	if Input.is_action_pressed("main_gun"):
+		if last_shot >= .3:
+			last_shot = 0
+			var bi = bullet.instance()
+			bi.set_pos(_barrel_tip_pos())
+			get_parent().get_parent().add_child(bi)
+			# set random values for spray effect
+			mouse_pos.x = mouse_pos.x + rand_range(-30,30)
+			mouse_pos.y = mouse_pos.y + rand_range(-30, 30)
+
+			bi.set_linear_velocity((mouse_pos - ship_pos).normalized() * bullet_speed)
+
+		last_shot = last_shot + (delta * 5)
+		
 	set_rot(gun_angle)
 	barrel_tip_pos = get_node("barrel_tip").get_global_pos()
 func _ready():
