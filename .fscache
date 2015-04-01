@@ -1,16 +1,16 @@
-::res://::1427808314
+::res://::1427817320
 area2d.gd::GDScript::1427808314::
 hpBar.gd::GDScript::1427808314::
 hp_bar.sbx::StyleBoxFlat::1427808314::
 hp_bar_bg.sbx::StyleBoxFlat::1427808314::
 icon.png::ImageTexture::1427808314::
-input_states.gd::GDScript::1427808314::
+input_states.gd::GDScript::1427808379::
 level_snow.scn::PackedScene::1427808314::
 pendulum.xml::PackedScene::1427808314::
-rocket.gd::GDScript::1427808314::
+rocket.gd::GDScript::1427817320::
 rocket.scn::PackedScene::1427808314::
-rocket_gun.gd::GDScript::1427808314::
-rocket_gun.scn::PackedScene::1427808314::
+rocket_gun.gd::GDScript::1427817320::
+rocket_gun.scn::PackedScene::1427816856::
 rocket_new.scn::PackedScene::1427808314::
 rocket_test_level.scn::PackedScene::1427808314::
 test.scn::PackedScene::1427808314::
@@ -18,7 +18,7 @@ tileset.scn::PackedScene::1427808314::
 tileset.xml::TileSet::1427808314::
 tileset_snow.xml::TileSet::1427808314::
 tileset_snow_edit.xml::PackedScene::1427808314::
-::res://art::1427808314
+::res://art::1427813914
 arrow.png::ImageTexture::1427808314::
 bowling_ball.png::ImageTexture::1427808314::
 box.png::ImageTexture::1427808314::
@@ -42,6 +42,7 @@ meteorBrown_med1.png::ImageTexture::1427808314::
 meteorBrown_med3.png::ImageTexture::1427808314::
 misslescararmblue.jpg::ImageTexture::1427808314::
 moving_platform.png::ImageTexture::1427808314::
+muzzleflash.png::ImageTexture::1190323655::
 osb_fire.png::ImageTexture::1427808314::
 osb_jump.png::ImageTexture::1427808314::
 osb_left.png::ImageTexture::1427808314::
@@ -70,12 +71,35 @@ trak_panel_50.png::ImageTexture::1427808314::
 trak_weaponspawn_4.jpg::ImageTexture::1427808314::
 vehl1train2.jpg::ImageTexture::1427808314::
 yellow_bar.png::ImageTexture::1427808314::
+::res://art/PixelVFX Muzzle Flare Pack::1427813914
+::res://art/PixelVFX Muzzle Flare Pack/Front Flare Set 1 (5 Variations)::1427813914
+Front Flare 1.png::ImageTexture::1402312106::
+Front Flare 2.png::ImageTexture::1402312106::
+Front Flare 3.png::ImageTexture::1402312106::
+Front Flare 4.png::ImageTexture::1402312106::
+Front Flare 5.png::ImageTexture::1402312106::
+::res://art/PixelVFX Muzzle Flare Pack/Side Flare Set 1 (3 Variations)::1427813914
+Side Flare 1.png::ImageTexture::1402312108::
+Side Flare 2.png::ImageTexture::1402312108::
+Side Flare 3.png::ImageTexture::1402312108::
+::res://art/PixelVFX Muzzle Flare Pack/Side Flare Set 2 (3 Variations)::1427813914
+Side Flare 1.png::ImageTexture::1402312108::
+Side Flare 2.png::ImageTexture::1402312108::
+Side Flare 3.png::ImageTexture::1402312108::
+::res://art/PixelVFX Muzzle Flare Pack/Star Flare Set 1 (3 Variations)::1427813914
+Star Flare 1.png::ImageTexture::1402312110::
+Star Flare 2.png::ImageTexture::1402312110::
+Star Flare 3.png::ImageTexture::1402312110::
+::res://art/PixelVFX Muzzle Flare Pack/Star Flare Set 2 (3 Variations)::1427813914
+Star Flare 1.png::ImageTexture::1402312108::
+Star Flare 2.png::ImageTexture::1402312108::
+Star Flare 3.png::ImageTexture::1402312108::
 ::res://art/space rocket::1427808314
 cohete_off.png::ImageTexture::1427808314::
 cohete_on_wf.png::ImageTexture::1427808314::
 plataforma.png::ImageTexture::1427808314::
-::res://enemies::1427808314
-spike_box.gd::GDScript::1427808314::
+::res://enemies::1427808379
+spike_box.gd::GDScript::1427808379::
 spike_box.xml::PackedScene::1427808314::
 ::res://platformer_tileset::1427808314
 tiles_demo.png::ImageTexture::1427808314::

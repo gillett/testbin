@@ -72,6 +72,7 @@ func _integrate_forces(state):
 		var cc = state.get_contact_collider_object(i)
 		var dp = state.get_contact_local_normal(i)
 	
+	
 func _on_Area2D_body_enter( body ):
 	#print(body.get_name())
 	if body.get_name() == 'spike_box':
