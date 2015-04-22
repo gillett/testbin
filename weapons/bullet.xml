@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="4" version="1.0" version_name="Godot Engine v1.0.stable.custom_build">
 	<ext_resource path="res://weapons/bullet.gd" type="Script"></ext_resource>
-	<resource type="RectangleShape2D" path="local://0">
+	<resource type="RectangleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="extents"> 5, 5 </vector2>
 
 	</resource>
-	<resource type="Animation" path="local://1">
-		<string name="resource/name"> "die" </string>
+	<resource type="Animation" path="local://2">
 		<real name="length"> 0.3 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.1 </real>
@@ -67,6 +66,7 @@
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
 			<string_array  len="117">
+				<string> "bullet" </string>
 				<string> "RigidBody2D" </string>
 				<string> "_import_path" </string>
 				<string> "visibility/visible" </string>
@@ -78,7 +78,6 @@
 				<string> "transform/scale" </string>
 				<string> "z/z" </string>
 				<string> "z/relative" </string>
-				<string> "input/pickable" </string>
 				<string> "shape_count" </string>
 				<string> "shapes/0/shape" </string>
 				<string> "shapes/0/transform" </string>
@@ -201,9 +200,9 @@
 				<real> 0 </real>
 				<vector2> 1, 1 </vector2>
 				<int> 0 </int>
-				<bool> False </bool>
-				<resource  resource_type="Shape2D" path="local://0">  </resource>
+				<resource  resource_type="Shape2D" path="local://1">  </resource>
 				<matrix32> 1, -0, 0, 1, 0, 0 </matrix32>
+				<bool> False </bool>
 				<int> 2 </int>
 				<real> -1 </real>
 				<resource  resource_type="Script" path="res://weapons/bullet.gd">  </resource>
@@ -223,28 +222,16 @@
 						</dictionary>
 						<string> "2D" </string>
 						<dictionary  shared="false">
-							<string> "snap_pixel" </string>
+							<string> "pixel_snap" </string>
 							<bool> False </bool>
-							<string> "snap_rotation_step" </string>
-							<real> 0.261799 </real>
 							<string> "zoom" </string>
 							<real> 4.65899 </real>
-							<string> "snap_step" </string>
+							<string> "use_snap" </string>
+							<bool> False </bool>
+							<string> "snap_vec" </string>
 							<vector2> 10, 10 </vector2>
-							<string> "snap_relative" </string>
-							<bool> False </bool>
-							<string> "snap_grid" </string>
-							<bool> False </bool>
-							<string> "snap_rotation_offset" </string>
-							<real> 0 </real>
-							<string> "snap_show_grid" </string>
-							<bool> False </bool>
-							<string> "snap_offset" </string>
-							<vector2> 0, 0 </vector2>
 							<string> "ofs" </string>
 							<vector2> -204.842, -96.8622 </vector2>
-							<string> "snap_rotation" </string>
-							<bool> False </bool>
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
@@ -347,7 +334,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 				</dictionary>
 				<vector2> 0.5, 0.5 </vector2>
 				<vector2_array  len="4"> 					-7.65784, -7.04744, -7.65784, 6.90408, 7.15224, 7.548, 7.58151, -7.906 </vector2_array>
@@ -355,7 +342,7 @@
 				<color> 1, 1, 1, 1 </color>
 				<resource name=""></resource>				<real> 100 </real>
 				<node_path> ".." </node_path>
-				<resource  resource_type="Animation" path="local://1">  </resource>
+				<resource  resource_type="Animation" path="local://2">  </resource>
 				<array  len="0" shared="false">
 				</array>
 				<string> "" </string>
@@ -370,7 +357,7 @@
 				<color> 0, 0, 0, 1 </color>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="319"> 				-1, -1, 0, 0, -1, 33, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 11, 8, 12, 3, 13, 9, 14, 10, 15, 8, 16, 3, 17, 11, 18, 2, 19, 2, 20, 5, 21, 2, 22, 8, 23, 7, 24, 3, 25, 1, 26, 8, 27, 1, 28, 4, 29, 5, 30, 12, 31, 12, 32, 13, 33, 14, 0, 0, 0, 34, 34, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 15, 9, 7, 10, 1, 35, 16, 36, 17, 37, 18, 38, 4, 39, 19, 40, 4, 41, 6, 42, 5, 43, 1, 44, 8, 45, 20, 0, 0, 0, 46, 46, -1, 12, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 47, 9, 48, 8, 0, 0, 0, 50, 49, -1, 9, 1, 0, 51, 7, 52, 5, 53, 21, 54, 22, 55, 1, 56, 2, 57, 23, 58, 24, 0, 0, 0, 59, 59, -1, 67, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 60, 25, 61, 26, 62, 27, 63, 5, 64, 28, 65, 8, 66, 4, 67, 4, 68, 1, 69, 2, 70, 8, 71, 8, 72, 19, 73, 3, 74, 3, 75, 29, 76, 29, 77, 30, 78, 5, 79, 5, 80, 5, 81, 31, 82, 5, 83, 5, 84, 5, 85, 5, 86, 32, 87, 32, 88, 5, 89, 2, 90, 5, 91, 5, 92, 5, 93, 5, 94, 5, 95, 5, 96, 5, 97, 5, 98, 5, 99, 5, 100, 5, 101, 5, 102, 5, 103, 5, 104, 5, 105, 5, 106, 5, 107, 3, 108, 5, 109, 18, 110, 2, 111, 18, 112, 2, 113, 33, 114, 2, 115, 33, 116, 17, 0 </int_array>
+			<int_array  len="317"> 				-1, -1, 1, 0, -1, 32, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 3, 13, 8, 14, 9, 15, 10, 16, 3, 17, 11, 18, 2, 19, 2, 20, 5, 21, 2, 22, 10, 23, 7, 24, 3, 25, 1, 26, 10, 27, 1, 28, 4, 29, 5, 30, 12, 31, 12, 32, 13, 33, 14, 0, 0, 0, 34, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 15, 10, 7, 11, 1, 35, 16, 36, 17, 37, 18, 38, 4, 39, 19, 40, 4, 41, 6, 42, 5, 43, 1, 44, 10, 45, 20, 0, 0, 0, 46, 46, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 47, 8, 48, 10, 0, 0, 0, 50, 49, -1, 9, 2, 0, 51, 7, 52, 5, 53, 21, 54, 22, 55, 1, 56, 2, 57, 23, 58, 24, 0, 0, 0, 59, 59, -1, 67, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 60, 25, 61, 26, 62, 27, 63, 5, 64, 28, 65, 10, 66, 4, 67, 4, 68, 1, 69, 2, 70, 10, 71, 10, 72, 19, 73, 3, 74, 3, 75, 29, 76, 29, 77, 30, 78, 5, 79, 5, 80, 5, 81, 31, 82, 5, 83, 5, 84, 5, 85, 5, 86, 32, 87, 32, 88, 5, 89, 2, 90, 5, 91, 5, 92, 5, 93, 5, 94, 5, 95, 5, 96, 5, 97, 5, 98, 5, 99, 5, 100, 5, 101, 5, 102, 5, 103, 5, 104, 5, 105, 5, 106, 5, 107, 3, 108, 5, 109, 18, 110, 2, 111, 18, 112, 2, 113, 33, 114, 2, 115, 33, 116, 17, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>

@@ -32,6 +32,10 @@ func _integrate_forces(state):
 
 func _ready():
 	# Initialization here
+	var children = get_parent().get_children()
+	for node in children:
+		if (node.get_name() == 'bullet'):
+			PS2D.body_add_collision_exception(node.get_rid(),get_rid()) # make bullet and this not collide			
 	pass
 
 
