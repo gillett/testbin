@@ -1,4 +1,3 @@
-
 extends Polygon2D
 
 # member variables here, example:
@@ -34,4 +33,3 @@ func _on_Area2D_body_enter( body ):
 			if child.get_name() == "door":
 				get_node(child.get_name()).get_node("anim").play(new_anim)
 		get_node("switch_anim").play(new_anim)
-	pass # replace with function body

@@ -25,20 +25,20 @@ func _fixed_process(delta):
 	gun_angle = ship_pos.angle_to_point(Vector2(mouseX, mouseY))
 	
 	if Input.is_action_pressed("main_gun"):
-		print(last_shot)
+		last_shot = last_shot + (delta * 5)
 		if last_shot >= .2:
 			last_shot = 0
 			var bi = bullet.instance()
 			bi.set_pos(_barrel_tip_pos())
 			get_parent().get_parent().add_child(bi)
 			# set random values for spray effect
-			mouse_pos.x = mouse_pos.x + rand_range(-20,20)
-			mouse_pos.y = mouse_pos.y + rand_range(-20, 20)
+			mouse_pos.x = mouse_pos.x + rand_range(-10,10)
+			mouse_pos.y = mouse_pos.y + rand_range(-10, 10)
 
 			bi.set_linear_velocity((mouse_pos - ship_pos).normalized() * bullet_speed)
 			#PS2D.body_add_collision_exception(bi.get_rid(),get_rid()) # make bullet and this not collide
 
-		last_shot = last_shot + (delta * 5)
+
 	# Set angle of gun to that of angle calculated 
 	set_rot(gun_angle)
 	barrel_tip_pos = get_node("barrel_tip").get_global_pos()
