@@ -31,9 +31,11 @@ func _fixed_process(delta):
 			var bi = bullet.instance()
 			bi.set_pos(_barrel_tip_pos())
 			get_parent().get_parent().add_child(bi)
+			
 			# set random values for spray effect
-			mouse_pos.x = mouse_pos.x + rand_range(-10,10)
-			mouse_pos.y = mouse_pos.y + rand_range(-10, 10)
+			# not as good as thought before... removing
+			#mouse_pos.x = mouse_pos.x + rand_range(-10,10)
+			#mouse_pos.y = mouse_pos.y + rand_range(-10, 10)
 
 			bi.set_linear_velocity((mouse_pos - ship_pos).normalized() * bullet_speed)
 			#PS2D.body_add_collision_exception(bi.get_rid(),get_rid()) # make bullet and this not collide
