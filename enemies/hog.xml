@@ -1,57 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.stable.custom_build">
-	<ext_resource path="res://weapons/bullet.gd" type="Script"></ext_resource>
-	<ext_resource path="res://art/laserBlue06.png" type="Texture"></ext_resource>
+	<ext_resource path="res://enemies/hog.gd" type="Script"></ext_resource>
+	<ext_resource path="res://art/erodaxia summary_0.png" type="Texture"></ext_resource>
 	<resource type="CircleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
-		<real name="radius"> 7 </real>
+		<real name="radius"> 22 </real>
 
 	</resource>
 	<resource type="Animation" path="local://2">
-		<real name="length"> 0.2 </real>
-		<bool name="loop"> False </bool>
-		<real name="step"> 0.01 </real>
+		<string name="resource/name"> "walk" </string>
+		<real name="length"> 1 </real>
+		<bool name="loop"> True </bool>
+		<real name="step"> 0.1 </real>
 		<string name="tracks/0/type"> "value" </string>
-		<node_path name="tracks/0/path"> "Particles2D:config/emitting" </node_path>
+		<node_path name="tracks/0/path"> "sprite:region_rect" </node_path>
 		<int name="tracks/0/interp"> 1 </int>
 		<dictionary name="tracks/0/keys" shared="false">
 			<string> "cont" </string>
 			<bool> False </bool>
 			<string> "transitions" </string>
-			<real_array  len="1"> 				1 </real_array>
+			<real_array  len="3"> 				1, 1, 1 </real_array>
 			<string> "values" </string>
-			<array  len="1" shared="false">
-				<bool> True </bool>
+			<array  len="3" shared="false">
+				<rect2> 333, 250, 50, 56 </rect2>
+				<rect2> 450, 250, 56, 56 </rect2>
+				<rect2> 333, 250, 50, 56 </rect2>
 			</array>
 			<string> "times" </string>
-			<real_array  len="1"> 				0 </real_array>
+			<real_array  len="3"> 				0, 0.5, 1 </real_array>
 		</dictionary>
-		<string name="tracks/1/type"> "method" </string>
-		<node_path name="tracks/1/path"> "." </node_path>
+		<string name="tracks/1/type"> "value" </string>
+		<node_path name="tracks/1/path"> "sprite:offset" </node_path>
 		<int name="tracks/1/interp"> 1 </int>
 		<dictionary name="tracks/1/keys" shared="false">
+			<string> "cont" </string>
+			<bool> False </bool>
 			<string> "transitions" </string>
-			<real_array  len="1"> 				1 </real_array>
+			<real_array  len="3"> 				1, 1, 1 </real_array>
 			<string> "values" </string>
-			<array  len="1" shared="false">
-				<dictionary  shared="false">
-					<string> "args" </string>
-					<array  len="0" shared="false">
-					</array>
-					<string> "method" </string>
-					<string> "_die" </string>
-				</dictionary>
+			<array  len="3" shared="false">
+				<vector2> 0, 0 </vector2>
+				<vector2> 5, 0 </vector2>
+				<vector2> 0, 0 </vector2>
 			</array>
 			<string> "times" </string>
-			<real_array  len="1"> 				0 </real_array>
+			<real_array  len="3"> 				0, 0.5, 1 </real_array>
 		</dictionary>
 
 	</resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="117">
-				<string> "bullet" </string>
+			<string_array  len="59">
+				<string> "hog" </string>
 				<string> "RigidBody2D" </string>
 				<string> "_import_path" </string>
 				<string> "visibility/visible" </string>
@@ -85,6 +86,7 @@
 				<string> "damp_override/angular" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
+				<string> "sprite" </string>
 				<string> "Sprite" </string>
 				<string> "texture" </string>
 				<string> "centered" </string>
@@ -100,83 +102,24 @@
 				<string> "CollisionShape2D" </string>
 				<string> "shape" </string>
 				<string> "trigger" </string>
-				<string> "anim" </string>
 				<string> "AnimationPlayer" </string>
 				<string> "playback/process_mode" </string>
 				<string> "playback/default_blend_time" </string>
 				<string> "root/root" </string>
-				<string> "anims/die" </string>
+				<string> "anims/walk" </string>
 				<string> "playback/active" </string>
 				<string> "playback/speed" </string>
 				<string> "blend_times" </string>
 				<string> "autoplay" </string>
-				<string> "Particles2D" </string>
-				<string> "config/amount" </string>
-				<string> "config/lifetime" </string>
-				<string> "config/time_scale" </string>
-				<string> "config/preprocess" </string>
-				<string> "config/emit_timeout" </string>
-				<string> "config/emitting" </string>
-				<string> "config/offset" </string>
-				<string> "config/half_extents" </string>
-				<string> "config/local_space" </string>
-				<string> "config/explosiveness" </string>
-				<string> "config/flip_h" </string>
-				<string> "config/flip_v" </string>
-				<string> "config/texture" </string>
-				<string> "config/h_frames" </string>
-				<string> "config/v_frames" </string>
-				<string> "params/direction" </string>
-				<string> "params/spread" </string>
-				<string> "params/linear_velocity" </string>
-				<string> "params/spin_velocity" </string>
-				<string> "params/orbit_velocity" </string>
-				<string> "params/gravity_direction" </string>
-				<string> "params/gravity_strength" </string>
-				<string> "params/radial_accel" </string>
-				<string> "params/tangential_accel" </string>
-				<string> "params/damping" </string>
-				<string> "params/initial_angle" </string>
-				<string> "params/initial_size" </string>
-				<string> "params/final_size" </string>
-				<string> "params/hue_variation" </string>
-				<string> "params/anim_speed_scale" </string>
-				<string> "params/anim_initial_pos" </string>
-				<string> "randomness/direction" </string>
-				<string> "randomness/spread" </string>
-				<string> "randomness/linear_velocity" </string>
-				<string> "randomness/spin_velocity" </string>
-				<string> "randomness/orbit_velocity" </string>
-				<string> "randomness/gravity_direction" </string>
-				<string> "randomness/gravity_strength" </string>
-				<string> "randomness/radial_accel" </string>
-				<string> "randomness/tangential_accel" </string>
-				<string> "randomness/damping" </string>
-				<string> "randomness/initial_angle" </string>
-				<string> "randomness/initial_size" </string>
-				<string> "randomness/final_size" </string>
-				<string> "randomness/hue_variation" </string>
-				<string> "randomness/anim_speed_scale" </string>
-				<string> "randomness/anim_initial_pos" </string>
-				<string> "color_phases/count" </string>
-				<string> "phase_0/pos" </string>
-				<string> "phase_0/color" </string>
-				<string> "phase_1/pos" </string>
-				<string> "phase_1/color" </string>
-				<string> "phase_2/pos" </string>
-				<string> "phase_2/color" </string>
-				<string> "phase_3/pos" </string>
-				<string> "phase_3/color" </string>
-				<string> "emission_points" </string>
 			</string_array>
 			<string> "version" </string>
 			<int> 1 </int>
 			<string> "conn_count" </string>
 			<int> 0 </int>
 			<string> "node_count" </string>
-			<int> 5 </int>
+			<int> 4 </int>
 			<string> "variants" </string>
-			<array  len="34" shared="false">
+			<array  len="24" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -186,11 +129,12 @@
 				<vector2> 1, 1 </vector2>
 				<int> 0 </int>
 				<resource  resource_type="Shape2D" path="local://1">  </resource>
-				<matrix32> 1, -0, 0, 1, 0, 0 </matrix32>
+				<matrix32> 1, -0, 0, 1, -0.788895, 3.31337 </matrix32>
 				<bool> False </bool>
 				<int> 2 </int>
+				<real> 5.102041 </real>
 				<real> -1 </real>
-				<resource  resource_type="Script" path="res://weapons/bullet.gd">  </resource>
+				<resource  resource_type="Script" path="res://enemies/hog.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
@@ -199,10 +143,8 @@
 							<string> "current" </string>
 							<int> 0 </int>
 							<string> "sources" </string>
-							<array  len="3" shared="false">
-								<string> "res://weapons/bullet.gd" </string>
-								<string> "res://rocket_gun.gd" </string>
-								<string> "res://rocket.gd" </string>
+							<array  len="1" shared="false">
+								<string> "res://enemies/hog.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -210,13 +152,13 @@
 							<string> "pixel_snap" </string>
 							<bool> False </bool>
 							<string> "zoom" </string>
-							<real> 14.400328 </real>
+							<real> 3.090869 </real>
 							<string> "use_snap" </string>
 							<bool> False </bool>
 							<string> "snap_vec" </string>
-							<vector2> 10, 10 </vector2>
+							<vector2> 2, 2 </vector2>
 							<string> "ofs" </string>
-							<vector2> -65.4508, -28.5239 </vector2>
+							<vector2> -292.216, -104.879 </vector2>
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
@@ -319,30 +261,20 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 				</dictionary>
-				<vector2> 0.7, 0.7 </vector2>
-				<resource  resource_type="Texture" path="res://art/laserBlue06.png">  </resource>
+				<resource  resource_type="Texture" path="res://art/erodaxia summary_0.png">  </resource>
 				<color> 1, 1, 1, 1 </color>
-				<rect2> 0, 0, 0, 0 </rect2>
+				<rect2> 333, 250, 50, 56 </rect2>
+				<vector2> -0.788895, 3.31337 </vector2>
 				<node_path> ".." </node_path>
 				<resource  resource_type="Animation" path="local://2">  </resource>
 				<array  len="0" shared="false">
 				</array>
-				<string> "" </string>
-				<int> 20 </int>
-				<real> 2 </real>
-				<real> 5 </real>
-				<real> 0.5 </real>
-				<resource name=""></resource>				<real> 180 </real>
-				<real> 45 </real>
-				<real> 9.8 </real>
-				<real> 3 </real>
-				<color> 0, 0, 0, 1 </color>
-				<vector2_array  len="0"> 					 </vector2_array>
+				<string> "walk" </string>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="317"> 				-1, -1, 1, 0, -1, 32, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 3, 13, 8, 14, 9, 15, 10, 16, 3, 17, 11, 18, 2, 19, 2, 20, 5, 21, 2, 22, 10, 23, 7, 24, 3, 25, 1, 26, 10, 27, 1, 28, 4, 29, 5, 30, 12, 31, 12, 32, 13, 33, 14, 0, 0, 0, 34, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 15, 10, 7, 11, 1, 35, 16, 36, 1, 37, 4, 38, 10, 39, 10, 40, 3, 41, 3, 42, 7, 43, 17, 44, 10, 45, 18, 0, 0, 0, 46, 46, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 47, 8, 48, 10, 0, 0, 0, 50, 49, -1, 9, 2, 0, 51, 7, 52, 5, 53, 19, 54, 20, 55, 1, 56, 2, 57, 21, 58, 22, 0, 0, 0, 59, 59, -1, 67, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 60, 23, 61, 24, 62, 25, 63, 5, 64, 26, 65, 10, 66, 4, 67, 4, 68, 1, 69, 2, 70, 10, 71, 10, 72, 27, 73, 3, 74, 3, 75, 28, 76, 28, 77, 29, 78, 5, 79, 5, 80, 5, 81, 30, 82, 5, 83, 5, 84, 5, 85, 5, 86, 31, 87, 31, 88, 5, 89, 2, 90, 5, 91, 5, 92, 5, 93, 5, 94, 5, 95, 5, 96, 5, 97, 5, 98, 5, 99, 5, 100, 5, 101, 5, 102, 5, 103, 5, 104, 5, 105, 5, 106, 5, 107, 3, 108, 5, 109, 17, 110, 2, 111, 17, 112, 2, 113, 32, 114, 2, 115, 32, 116, 33, 0 </int_array>
+			<int_array  len="176"> 				-1, -1, 1, 0, -1, 32, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 3, 13, 8, 14, 9, 15, 10, 16, 3, 17, 11, 18, 12, 19, 2, 20, 5, 21, 2, 22, 10, 23, 7, 24, 7, 25, 10, 26, 10, 27, 1, 28, 4, 29, 5, 30, 13, 31, 13, 32, 14, 33, 15, 0, 0, 0, 35, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 36, 16, 37, 1, 38, 4, 39, 10, 40, 10, 41, 3, 42, 3, 43, 7, 44, 17, 45, 1, 46, 18, 0, 0, 0, 47, 47, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 19, 8, 5, 9, 6, 10, 7, 11, 1, 48, 8, 49, 10, 0, 0, 0, 50, 50, -1, 9, 2, 0, 51, 3, 52, 5, 53, 20, 54, 21, 55, 1, 56, 2, 57, 22, 58, 23, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>
