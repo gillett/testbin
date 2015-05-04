@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="4" version="1.0" version_name="Godot Engine v1.0.stable.custom_build">
+	<ext_resource path="res://diagram.png" type="Texture"></ext_resource>
+	<ext_resource path="res://indicators.png" type="Texture"></ext_resource>
+	<ext_resource path="res://disconnect.png" type="Texture"></ext_resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "names" </string>
+			<string_array  len="76">
+				<string> "diagram" </string>
+				<string> "Sprite" </string>
+				<string> "_import_path" </string>
+				<string> "visibility/visible" </string>
+				<string> "visibility/opacity" </string>
+				<string> "visibility/self_opacity" </string>
+				<string> "visibility/light_mask" </string>
+				<string> "transform/pos" </string>
+				<string> "transform/rot" </string>
+				<string> "transform/scale" </string>
+				<string> "z/z" </string>
+				<string> "z/relative" </string>
+				<string> "texture" </string>
+				<string> "centered" </string>
+				<string> "offset" </string>
+				<string> "flip_h" </string>
+				<string> "flip_v" </string>
+				<string> "vframes" </string>
+				<string> "hframes" </string>
+				<string> "frame" </string>
+				<string> "modulate" </string>
+				<string> "region" </string>
+				<string> "region_rect" </string>
+				<string> "__meta__" </string>
+				<string> "action_4" </string>
+				<string> "action_1" </string>
+				<string> "action_2" </string>
+				<string> "action_3" </string>
+				<string> "back" </string>
+				<string> "start" </string>
+				<string> "home" </string>
+				<string> "trig_left" </string>
+				<string> "trig_right" </string>
+				<string> "bump_left" </string>
+				<string> "bump_right" </string>
+				<string> "leftstick_up" </string>
+				<string> "leftstick_left" </string>
+				<string> "leftstick_down" </string>
+				<string> "leftstick_right" </string>
+				<string> "rightstick_up" </string>
+				<string> "rightstick_right" </string>
+				<string> "rightstick_down" </string>
+				<string> "rightstick_left" </string>
+				<string> "dpad_up" </string>
+				<string> "dpad_right" </string>
+				<string> "dpad_down" </string>
+				<string> "dpad_left" </string>
+				<string> "click_right" </string>
+				<string> "click_left" </string>
+				<string> "btn_deregister" </string>
+				<string> "TextureButton" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "hint/tooltip" </string>
+				<string> "focus_neighbour/left" </string>
+				<string> "focus_neighbour/top" </string>
+				<string> "focus_neighbour/right" </string>
+				<string> "focus_neighbour/bottom" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "size_flags/stretch_ratio" </string>
+				<string> "disabled" </string>
+				<string> "toggle_mode" </string>
+				<string> "click_on_press" </string>
+				<string> "textures/normal" </string>
+				<string> "textures/pressed" </string>
+				<string> "textures/hover" </string>
+				<string> "textures/disabled" </string>
+				<string> "textures/focused" </string>
+				<string> "textures/click_mask" </string>
+				<string> "params/scale" </string>
+				<string> "params/modulate" </string>
+			</string_array>
+			<string> "version" </string>
+			<int> 1 </int>
+			<string> "conn_count" </string>
+			<int> 0 </int>
+			<string> "node_count" </string>
+			<int> 27 </int>
+			<string> "variants" </string>
+			<array  len="59" shared="false">
+				<node_path> "" </node_path>
+				<bool> True </bool>
+				<real> 1 </real>
+				<int> 1 </int>
+				<vector2> 382.201, 212.568 </vector2>
+				<real> 0 </real>
+				<vector2> 0.432859, 0.446287 </vector2>
+				<int> 0 </int>
+				<resource  resource_type="Texture" path="res://diagram.png">  </resource>
+				<vector2> 0, 0 </vector2>
+				<bool> False </bool>
+				<color> 1, 1, 1, 1 </color>
+				<rect2> 0, 0, 0, 0 </rect2>
+				<dictionary  shared="false">
+					<string> "__editor_plugin_states__" </string>
+					<dictionary  shared="false">
+						<string> "2D" </string>
+						<dictionary  shared="false">
+							<string> "pixel_snap" </string>
+							<bool> False </bool>
+							<string> "zoom" </string>
+							<real> 1.50734 </real>
+							<string> "use_snap" </string>
+							<bool> True </bool>
+							<string> "ofs" </string>
+							<vector2> -73.5158, -1.46971 </vector2>
+							<string> "snap" </string>
+							<int> 5 </int>
+						</dictionary>
+						<string> "3D" </string>
+						<dictionary  shared="false">
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
+							<string> "zfar" </string>
+							<real> 500 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
+							<string> "viewports" </string>
+							<array  len="4" shared="false">
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> True </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+							</array>
+							<string> "viewport_mode" </string>
+							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
+							<string> "ambient_light_color" </string>
+							<color> 0.15, 0.15, 0.15, 1 </color>
+							<string> "show_grid" </string>
+							<bool> True </bool>
+							<string> "show_origin" </string>
+							<bool> True </bool>
+							<string> "znear" </string>
+							<real> 0.1 </real>
+							<string> "default_srgb" </string>
+							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
+						</dictionary>
+					</dictionary>
+					<string> "__editor_run_settings__" </string>
+					<dictionary  shared="false">
+						<string> "custom_args" </string>
+						<string> "-l $scene" </string>
+						<string> "run_mode" </string>
+						<int> 0 </int>
+					</dictionary>
+					<string> "__editor_plugin_screen__" </string>
+					<string> "2D" </string>
+				</dictionary>
+				<vector2> 149.073, 47.3293 </vector2>
+				<vector2> 0.9, 0.9 </vector2>
+				<resource  resource_type="Texture" path="res://indicators.png">  </resource>
+				<rect2> 0, 0, 45, 45 </rect2>
+				<vector2> 147.73, 120.925 </vector2>
+				<vector2> 185.769, 82.4874 </vector2>
+				<vector2> 112.377, 82.4874 </vector2>
+				<vector2> -46.6707, 52.702 </vector2>
+				<vector2> 0.810497, 0.57205 </vector2>
+				<vector2> 56.2581, 54.4382 </vector2>
+				<vector2> 5.09612, 62.8399 </vector2>
+				<vector2> 1.40261, 1.02187 </vector2>
+				<vector2> -159.349, -221.878 </vector2>
+				<vector2> 1.0458, 2.16952 </vector2>
+				<rect2> 0, 0, 45, 22 </rect2>
+				<vector2> 156.677, -220.11 </vector2>
+				<vector2> -161.038, -158.037 </vector2>
+				<vector2> 5.3348, 3.35512 </vector2>
+				<rect2> 10, 10, 10, 10 </rect2>
+				<vector2> 159.362, -156.977 </vector2>
+				<vector2> -67.6802, 137.926 </vector2>
+				<rect2> 50, 0, 54, 14 </rect2>
+				<vector2> -94.4295, 164.932 </vector2>
+				<rect2> 50, 0, 14, 54 </rect2>
+				<vector2> -67.4618, 192.915 </vector2>
+				<vector2> -40.3475, 164.509 </vector2>
+				<vector2> 76.6557, 140.986 </vector2>
+				<vector2> 102.899, 167.857 </vector2>
+				<vector2> 76.0009, 195.339 </vector2>
+				<vector2> 48.8152, 167.145 </vector2>
+				<vector2> -139.402, 46.8295 </vector2>
+				<vector2> -105.085, 81.0326 </vector2>
+				<vector2> -139.838, 115.789 </vector2>
+				<vector2> -172.262, 81.8793 </vector2>
+				<vector2> 75.8825, 167.363 </vector2>
+				<vector2> -67.5308, 164.422 </vector2>
+				<real> -32 </real>
+				<real> -207 </real>
+				<real> 32 </real>
+				<real> -143 </real>
+				<string> "Deregister this device" </string>
+				<int> 2 </int>
+				<resource  resource_type="Texture" path="res://disconnect.png">  </resource>
+				<resource name=""></resource>				<vector2> 1, 1 </vector2>
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="1343"> 				-1, -1, 1, 0, -1, 22, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 10, 22, 12, 23, 13, 0, 0, 0, 1, 24, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 14, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 17, 0, 0, 0, 1, 25, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 18, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 17, 0, 0, 0, 1, 26, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 19, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 17, 0, 0, 0, 1, 27, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 20, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 17, 0, 0, 0, 1, 28, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 21, 8, 5, 9, 22, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 17, 0, 0, 0, 1, 29, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 23, 8, 5, 9, 22, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 17, 0, 0, 0, 1, 30, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 24, 8, 5, 9, 25, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 17, 0, 0, 0, 1, 31, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 26, 8, 5, 9, 27, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 1, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 28, 0, 0, 0, 1, 32, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 29, 8, 5, 9, 27, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 28, 0, 0, 0, 1, 33, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 30, 8, 5, 9, 31, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 32, 0, 0, 0, 1, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 33, 8, 5, 9, 31, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 32, 0, 0, 0, 1, 35, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 34, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 35, 0, 0, 0, 1, 36, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 36, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 37, 0, 0, 0, 1, 37, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 38, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 1, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 35, 0, 0, 0, 1, 38, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 39, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 1, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 37, 0, 0, 0, 1, 39, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 40, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 35, 0, 0, 0, 1, 40, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 41, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 1, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 37, 0, 0, 0, 1, 41, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 42, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 1, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 35, 0, 0, 0, 1, 42, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 43, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 37, 0, 0, 0, 1, 43, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 44, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 35, 0, 0, 0, 1, 44, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 45, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 1, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 37, 0, 0, 0, 1, 45, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 46, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 1, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 35, 0, 0, 0, 1, 46, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 47, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 37, 0, 0, 0, 1, 47, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 48, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 17, 0, 0, 0, 1, 48, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 49, 8, 5, 9, 15, 10, 7, 11, 1, 12, 16, 13, 1, 14, 9, 15, 10, 16, 10, 17, 3, 18, 3, 19, 7, 20, 11, 21, 1, 22, 17, 0, 0, 0, 50, 49, -1, 30, 2, 0, 3, 10, 4, 2, 5, 2, 6, 3, 51, 50, 52, 51, 53, 52, 54, 53, 55, 54, 56, 0, 57, 0, 58, 0, 59, 0, 60, 10, 61, 1, 62, 55, 63, 55, 64, 2, 65, 10, 66, 10, 67, 10, 68, 56, 69, 57, 70, 57, 71, 57, 72, 57, 73, 57, 74, 58, 75, 11, 0 </int_array>
+			<string> "conns" </string>
+			<int_array  len="0"> 				 </int_array>
+		</dictionary>
+
+	</main_resource>
+</resource_file>

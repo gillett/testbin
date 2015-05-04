@@ -4,9 +4,11 @@ extends Node2D
 # var a=2
 # var b="textvar"
 
+var JS
 var bullet = preload("res://weapons/bullet.xml")
 
-var gun_angle = 0
+var gun_angle
+var prev_gun_angle
 var barrel_tip_pos
 export var ship_pos = Vector2(0,0)
 var mouseX 
@@ -27,7 +29,12 @@ func _fixed_process(delta):
 	# Calculate the angle from the ship to the mouse position
 	#gun_angle = ship_pos.angle_to_point(Vector2(mouseX, mouseY)) v1
 	#gun_angle = lerp(gun_angle, ship_pos.angle_to_point(mouse_pos),0.04) v1.1
-	gun_angle = ship_pos.angle_to_point(mouse_pos)
+	#gun_angle = ship_pos.angle_to_point(mouse_pos) v.1.2 LAST WORKING STATE
+	if JS.get_angle("rightstick") != null:
+		gun_angle = deg2rad(-JS.get_angle("rightstick"))
+		prev_gun_angle = gun_angle
+	else:
+		gun_angle = prev_gun_angle
 	
 	# Set angle of gun to that of angle calculated 
 	set_rot(gun_angle)
@@ -39,7 +46,7 @@ func _fixed_process(delta):
 	# Get the tip of the generated position
 	barrel_tip_pos = get_node(str(tip_pos_id)).get_global_pos()
 		
-	if Input.is_action_pressed("main_gun"):
+	if Input.is_action_pressed("main_gun") || JS.get_digital("trig_right") || JS.get_angle("rightstick") != null :
 		last_shot = last_shot + (delta * 5)
 		if last_shot >= .2:
 			last_shot = 0
@@ -48,12 +55,14 @@ func _fixed_process(delta):
 			bi.set_rot(get_rot())
 			get_parent().get_parent().add_child(bi)
 			
-			bi.set_linear_velocity((mouse_pos - ship_pos).normalized() * bullet_speed)
-			#PS2D.body_add_collision_exception(bi.get_rid(),get_rid()) # make bullet and this not collide
+			#bi.set_linear_velocity((mouse_pos - ship_pos).normalized() * bullet_speed) v.1.2 LAST WORKING STATE
+			bi.set_linear_velocity((get_node("trajectory_path").get_global_pos() - ship_pos).normalized() * bullet_speed)
 func _ready():
 	# Initialization here
-	mouseX = 0 #get_node("ship").get_pos().x
-	mouseY = 0 #get_node("ship").get_pos().y
+	JS = get_node("/root/SUTjoystick")
+	prev_gun_angle = deg2rad(-90)
+	mouseX = 0
+	mouseY = 0 
 	set_fixed_process(true)
 	pass
 

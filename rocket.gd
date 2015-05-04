@@ -1,6 +1,7 @@
 extends Node2D
 
 # Enemies
+var JS
 var spike_class = preload("res://enemies/spike_box.gd")
 var input_states = preload("res://input_states.gd")
 
@@ -34,6 +35,7 @@ func is_on_ground():
 	else:
 		return false
 func _ready():
+	JS = get_node("/root/SUTjoystick")
 	raycast_down = get_node("RayCast2D")
 	raycast_down.add_exception(self)
 
@@ -47,7 +49,7 @@ func _integrate_forces(state):
 	var step = state.get_step()
 
 	#var current_velocity = get_linear_velocity()	
-	if btn_up.check() == 2:
+	if btn_up.check() == 2 || JS.get_digital("leftstick_up"):
 		thrusters(-thrust_speed, thrust_acceleration, step)
 		get_node("thrust_on").show()
 	else:
@@ -55,22 +57,23 @@ func _integrate_forces(state):
 		current_thrust.y = get_linear_velocity().y
 		
 	if !is_on_ground():	
-		if btn_left.check() == 2:
+		if btn_left.check() == 2 || JS.get_digital("leftstick_left"):
 			move(-player_speed, acceleration, step)
-		elif btn_right.check() ==2:
+		elif btn_right.check() ==2 || JS.get_digital("leftstick_right"):
 			move(player_speed, acceleration,step)
 		else:
 			move(0, acceleration, step)
-	if btn_up.check() == 2:
-		thrusters(-thrust_speed, thrust_acceleration, step)
-		get_node("thrust_on").show()
-	else:
-		get_node("thrust_on").hide()
-		current_thrust.y = get_linear_velocity().y
+			
+	#if btn_up.check() == 2:
+	#	thrusters(-thrust_speed, thrust_acceleration, step)
+	#	get_node("thrust_on").show()
+	#else:
+	#	get_node("thrust_on").hide()
+	#	current_thrust.y = get_linear_velocity().y
 		
-	for i in range(state.get_contact_count()):
-		var cc = state.get_contact_collider_object(i)
-		var dp = state.get_contact_local_normal(i)
+	#for i in range(state.get_contact_count()):
+	#	var cc = state.get_contact_collider_object(i)
+	#	var dp = state.get_contact_local_normal(i)
 	
 	
 func _on_Area2D_body_enter( body ):

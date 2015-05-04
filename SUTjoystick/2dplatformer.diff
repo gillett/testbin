@@ -1,0 +1,67 @@
+diff -purN platformer-orig/engine.cfg platformer/engine.cfg
+--- platformer-orig/engine.cfg	2014-05-05 13:44:30.000000000 -0400
++++ platformer/engine.cfg	2014-11-24 04:02:40.084847099 -0500
+@@ -5,6 +5,10 @@ main_scene="res://stage.xml"
+ icon="res://icon.png"
+ name_es="Plataformero"
+ 
++[autoload]
++
++SUTjoystick="res://SUTjoystick.gd"
++
+ [display]
+ 
+ width=800
+@@ -19,11 +23,11 @@ repeat=false
+ 
+ [input]
+ 
+-move_left=[key(Left), jbutton(0, 14)]
+-move_right=[key(Right), jbutton(0, 15)]
+-jump=[key(Up), jbutton(0, 0)]
+-shoot=[key(Space), jbutton(0, 2)]
+-spawn=[key(F1), jbutton(0, 11)]
++move_left=[key(Left)]
++move_right=[key(Right)]
++jump=[key(Up)]
++shoot=[key(Space)]
++spawn=[key(F1)]
+ 
+ [physics_2d]
+ 
+diff -purN platformer-orig/player.gd platformer/player.gd
+--- platformer-orig/player.gd	2014-02-19 17:00:48.000000000 -0500
++++ platformer/player.gd	2014-11-24 04:03:08.364845960 -0500
+@@ -51,6 +51,8 @@ var bullet = preload("res://bullet.xml")
+ var floor_h_velocity=0.0
+ var enemy
+ 
++var JS
++
+ func _integrate_forces(s):
+ 
+ 	var lv = s.get_linear_velocity()
+@@ -60,11 +62,11 @@ func _integrate_forces(s):
+ 	var new_siding_left=siding_left
+ 	
+ 	# Get the controls
+-	var move_left = Input.is_action_pressed("move_left")
+-	var move_right = Input.is_action_pressed("move_right")
+-	var jump = Input.is_action_pressed("jump")
+-	var shoot = Input.is_action_pressed("shoot")
+-	var spawn = Input.is_action_pressed("spawn")
++	var move_left = Input.is_action_pressed("move_left") or JS.get_digital("leftstick_left")
++	var move_right = Input.is_action_pressed("move_right") or JS.get_digital("leftstick_right")
++	var jump = Input.is_action_pressed("jump") or JS.get_digital("action_1")
++	var shoot = Input.is_action_pressed("shoot") or JS.get_digital("action_3")
++	var spawn = Input.is_action_pressed("spawn") or JS.get_digital("click_right")
+ 	
+ 	if spawn:
+ 		var e = enemy.instance()
+@@ -253,6 +255,7 @@ func _ready():
+ #	var title = "I just sneezed on your wall!"
+ #	Facebook.post("feed", msg, title, link, icon)
+ 	enemy = ResourceLoader.load("res://enemy.xml")
++	JS = get_node("/root/SUTjoystick")
+ 	pass
+ 
