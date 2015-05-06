@@ -6,7 +6,7 @@ extends Node2D
 
 var JS
 var bullet = preload("res://weapons/bullet.xml")
-
+var mouse_pos = Vector2(0,0)
 var gun_angle
 var prev_gun_angle
 var barrel_tip_pos
@@ -20,7 +20,7 @@ var last_shot = .3
 
 func _fixed_process(delta):
 	ship_pos = get_parent().get_pos()
-	var mouse_pos = get_viewport_transform().affine_inverse().xform(Input.get_mouse_pos())
+	#var mouse_pos = get_viewport_transform().affine_inverse().xform(Input.get_mouse_pos()) # old method - no longer supported
 	
 	# Lerping the speed of the gun allows a more natural feel
 	mouseX = lerp(mouseX, mouse_pos.x, 0.04)
@@ -32,6 +32,9 @@ func _fixed_process(delta):
 	#gun_angle = ship_pos.angle_to_point(mouse_pos) v.1.2 LAST WORKING STATE
 	if JS.get_angle("rightstick") != null:
 		gun_angle = deg2rad(-JS.get_angle("rightstick"))
+		prev_gun_angle = gun_angle
+	elif mouse_pos != Vector2(0,0):
+		gun_angle = ship_pos.angle_to_point(mouse_pos)
 		prev_gun_angle = gun_angle
 	else:
 		gun_angle = prev_gun_angle
@@ -63,9 +66,17 @@ func _ready():
 	prev_gun_angle = deg2rad(-90)
 	mouseX = 0
 	mouseY = 0 
+	set_process_input(true)
 	set_fixed_process(true)
 	pass
 
+func _input(ev):
+   # Mouse in viewport coordinates
+	if (ev.type==InputEvent.MOUSE_MOTION):
+		mouse_pos = get_viewport_transform().affine_inverse().xform(ev.pos)
+
+   # Print the size of the viewport
+   #print("Viewport Resolution is: ",get_viewport_rect().size)
 func _barrel_tip_pos():
 	return barrel_tip_pos
 
