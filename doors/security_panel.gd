@@ -27,6 +27,7 @@ func _on_Area2D_body_enter( body ):
 
 	var new_anim = anim
 	if body.get_name() == "bullet":
+		#print("hit!")
 		if STATE_RUNNING:
 			_do_damage(1)
 			#new_anim = "hit"

@@ -6,6 +6,7 @@ extends Node2D
 
 var JS
 var bullet = preload("res://weapons/bullet.xml")
+var bullet_particle = preload("res://effects/fire_explosion.gd")
 var mouse_pos = Vector2(0,0)
 var gun_angle
 var prev_gun_angle
@@ -54,12 +55,15 @@ func _fixed_process(delta):
 		if last_shot >= .2:
 			last_shot = 0
 			var bi = bullet.instance()
+			get_node("explosion").set_emitting(true)
 			bi.set_pos(_barrel_tip_pos())
 			bi.set_rot(get_rot())
 			get_parent().get_parent().add_child(bi)
 			
 			#bi.set_linear_velocity((mouse_pos - ship_pos).normalized() * bullet_speed) v.1.2 LAST WORKING STATE
 			bi.set_linear_velocity((get_node("trajectory_path").get_global_pos() - ship_pos).normalized() * bullet_speed)
+	else:
+		get_node("explosion").set_emitting(false)
 func _ready():
 	# Initialization here
 	JS = get_node("/root/SUTjoystick")
@@ -80,3 +84,9 @@ func _input(ev):
 func _barrel_tip_pos():
 	return barrel_tip_pos
 
+func bullet_explode(pos):
+	var bpi = bullet_particle.instance()
+	bpi.set_scale(0.2,0.2)
+	bpi.set_global_pos(pos)
+	get_parent().get_parent().add_child(bpi)
+	bpi.explode()

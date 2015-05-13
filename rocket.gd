@@ -12,8 +12,6 @@ export var thrust_speed = 0
 var current_speed = Vector2(0,0)
 var current_thrust = Vector2(0,0)
 var current_gravity = Vector2(0,0)
-export var winds = float(20.0)
-export var extra_gravity = 0
 
 var raycast_down = null
 
@@ -52,8 +50,12 @@ func _integrate_forces(state):
 	if btn_up.check() == 2 || JS.get_digital("leftstick_up"):
 		thrusters(-thrust_speed, thrust_acceleration, step)
 		get_node("thrust_on").show()
+		#get_node("thrust_smoke").set_emitting(true)
+		#get_node("thrust_burst").set_emitting(true)
 	else:
 		get_node("thrust_on").hide()
+		#get_node("thrust_smoke").set_emitting(false)
+		#get_node("thrust_burst").set_emitting(false)
 		current_thrust.y = get_linear_velocity().y
 		
 	if !is_on_ground():	

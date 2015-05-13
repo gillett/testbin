@@ -5,11 +5,13 @@ extends RigidBody2D
 # var a=2
 # var b="textvar"
 var rocket_gun_class = preload("res://rocket_gun.gd")
+var bp = preload("res://effects/fire_explosion.gd")
 var STATE_FIRED = 1
 var STATE_DYING = 0
 var anim = ""
 var obj_state = STATE_FIRED
 
+var death_pos = Vector2(0,0)
 
 func _die():
 	queue_free()
@@ -23,6 +25,7 @@ func _integrate_forces(state):
 			if cc:
 				state=STATE_DYING
 				new_anim = "die"
+				
 	elif obj_state == STATE_DYING:		
 		get_node("anim").play("die")
 	
