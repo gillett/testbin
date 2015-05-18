@@ -21,7 +21,7 @@ var last_shot = .3
 
 func _fixed_process(delta):
 	ship_pos = get_parent().get_pos()
-	#var mouse_pos = get_viewport_transform().affine_inverse().xform(Input.get_mouse_pos()) # old method - no longer supported
+	#mouse_pos = get_viewport().get_mouse_pos()
 	
 	# Lerping the speed of the gun allows a more natural feel
 	mouseX = lerp(mouseX, mouse_pos.x, 0.04)
@@ -32,7 +32,7 @@ func _fixed_process(delta):
 	#gun_angle = lerp(gun_angle, ship_pos.angle_to_point(mouse_pos),0.04) v1.1
 	#gun_angle = ship_pos.angle_to_point(mouse_pos) v.1.2 LAST WORKING STATE
 	if JS.get_angle("rightstick") != null:
-		gun_angle = deg2rad(-JS.get_angle("rightstick"))
+		gun_angle = JS.get_angle("rightstick")
 		prev_gun_angle = gun_angle
 	elif mouse_pos != Vector2(0,0):
 		gun_angle = ship_pos.angle_to_point(mouse_pos)
@@ -67,10 +67,11 @@ func _fixed_process(delta):
 func _ready():
 	# Initialization here
 	JS = get_node("/root/SUTjoystick")
+	JS.set_deadzone(10)
 	prev_gun_angle = deg2rad(-90)
 	mouseX = 0
 	mouseY = 0 
-	set_process_input(true)
+	#set_process_input(true)
 	set_fixed_process(true)
 	pass
 

@@ -1,7 +1,7 @@
 {
     "axis": {
-        "dpad_down": 5,
-        "dpad_left": 6,
+        "dpad_down": 6,
+        "dpad_left": -5,
         "dpad_right": 5,
         "dpad_up": -6,
         "leftstick_down": 2,
@@ -35,7 +35,7 @@
         "trig_right": 7
     },
     "common_name": "Logitech Dual Action Gamepad",
-    "deadzone": 0.1,
+    "deadzone": 0.05,
     "flight_stick": false,
     "guitar": false,
     "md5": "fb062fb595f4a8dc6514de3711715cfc",

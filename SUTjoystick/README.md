@@ -53,7 +53,7 @@ Note that each joystick is different, and you might not quite get a full 1.0 at 
     var pitch = JS.get_analog("rightstick_ver")
 ```
 
-In some instances, you may wish for a quick and easy way to fetch the angle of an analog stick, or even the directional pad. SUTjoystick provides the get_angle() function to do just that. It will return the angle in degrees, with 0 pointing straight up. Note that you can only pass the leftstick, rightstick, or dpad values (or any of their aliases). If there is no input on the stick, there is no angle; you will receive a null return.
+In some instances, you may wish for a quick and easy way to fetch the angle of an analog stick, or even the directional pad. SUTjoystick provides the get_angle() function to do just that. It will return the angle in radians, with 0 pointing straight up, PI pointing straight down, and values in between on either side (negative on the right). Note that you can only pass the leftstick, rightstick, or dpad names (or any of their aliases) to fetch the values. If there is no input on the stick, there is no angle; you will receive a null return and must account for this in your code.
 
 ```python
     var ls_angle = JS.get_angle("leftstick")
@@ -164,6 +164,26 @@ If you don't care which controller is used for a particular action, say for a si
     var any_player_start = JS.get_digital("start") # JS.get_digital("start", 0) also works
 ```
 
+## Overriding Deadzones
+
+Each gamepad has its own deadzone configured in the mapping, and it applies to both analog sticks and analog triggers. However, there may be times when you may wish to override this value, or disable deadzones altogether. You can set a deadzone for a specific player or globally. You can set a deadzone value between 0 and <1, or as a percentage, from 0 to 100. To erase a custom deadzone, pass null or a negative value, or just call the function without any parameters, and the player's device's default deadzone will be used once again.
+
+```python
+    JS.set_deadzone(0.25,1) # set player 1's deadzone to 25%
+    JS.set_deadzone(15) # set deadzone to 15% for all players
+    JS.set_deadzone(0) # ignore deadzones
+    JS.set_deadzone(null, 3) # remove player 3's custom deadzone
+    JS.set_deadzone() # remove all custom deadzones
+```
+
+## Analog Value Scaling
+
+The values you receive when calling get_analog() will be scaled between 0 and 1, after factoring out the deadzone. Take for example a device with a large deadzone of 0.33 (33%). If the raw input is at 0.66 (66%), get_analog() will actually give you a scaled value of 0.5 (50%). If you would rather retrieve the actual value of the input, you can disable the scaling, but beware that you will never receive a value that is less than the deadzone. Using the same example, you'll receive values only between 0.33 and 1.
+
+```python
+    JS.scale_analog_values = false
+```
+
 ## Managing Devices
 
 SUTjoystick does a lot for you automatically; however, you may wish to access the controller name in use by a player, or the raw device number assigned to a player, or maybe you wish to provide a way to deregister devices. Here are the functions and example context to do just that:
@@ -255,6 +275,7 @@ If you would rather disable this behavior, you can set the module's **disable_fa
 | Logitech F310 Gamepad                           | X | X |  |
 | Logitech F510 Gamepad                           | X | X |  |
 | Logitech F710 Wireless Gamepad                  | X | X |  |
+| Logitech Wingman Cordless Gamepad               | X | X |  |
 | Microsoft Xbox 360 Controller (xboxdrv)         | X |  |  |
 | Microsoft Xbox 360 Wired Controller for Windows | X |  |  |
 | Nintendo Wii Classic Controller                 | X |  |  |
@@ -294,5 +315,5 @@ Other platforms are not yet supported in the master branch of SUTjoystick.
 This section of the page is dedicated to listing games that utilize this module. If you use the module and would like to be listed here, send an email to [joystick@shineuponthee.com](mailto:joystick@shineuponthee.com).
 
 * **Battle Tic Tac Toe** (unreleased) by Shine Upon Thee
-* **[Minilens](https://github.com/alketii/minilens)**
+* **[Minilens](https://kobuge-games.github.io/minilens/)** by KOBUGE Games
 * **Project Scapegoat** (unreleased) by Shine Upon Thee

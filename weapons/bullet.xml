@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="6" version="1.1" version_name="Godot Engine v1.1.rc2.0995a230f6">
+<resource_file type="PackedScene" subresource_count="6" version="1.1" version_name="Godot Engine v1.1.rc2.custom_build">
 	<ext_resource path="res://weapons/bullet.gd" type="Script"></ext_resource>
 	<ext_resource path="res://art/laserBlue06.png" type="Texture"></ext_resource>
 	<ext_resource path="res://effects/fire_explosion.xml" type="PackedScene"></ext_resource>
-	<resource type="CircleShape2D" path="local://1">
+	<resource type="CircleShape2D" path="local://0">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 7 </real>
 
 	</resource>
-	<resource type="Animation" path="local://2">
+	<resource type="Animation" path="local://1">
 		<real name="length"> 0.2 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.1 </real>
@@ -70,7 +70,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="64">
+			<string_array  len="78">
 				<string> "bullet" </string>
 				<string> "RigidBody2D" </string>
 				<string> "_import_path" </string>
@@ -134,14 +134,28 @@
 				<string> "autoplay" </string>
 				<string> "explosion" </string>
 				<string> "Particles2D" </string>
+				<string> "config/amount" </string>
+				<string> "config/lifetime" </string>
+				<string> "config/emit_timeout" </string>
+				<string> "params/direction" </string>
+				<string> "params/spread" </string>
+				<string> "params/linear_velocity" </string>
+				<string> "params/gravity_direction" </string>
+				<string> "params/gravity_strength" </string>
+				<string> "params/damping" </string>
+				<string> "params/initial_size" </string>
+				<string> "params/final_size" </string>
+				<string> "randomness/spread" </string>
+				<string> "randomness/linear_velocity" </string>
+				<string> "phase_2/color" </string>
 				<string> "emission_points" </string>
 			</string_array>
 			<string> "node_count" </string>
 			<int> 5 </int>
 			<string> "nodes" </string>
-			<int_array  len="193"> 				-1, -1, 1, 0, -1, 34, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 11, 19, 11, 20, 2, 21, 2, 22, 5, 23, 2, 24, 8, 25, 7, 26, 3, 27, 1, 28, 8, 29, 1, 30, 4, 31, 5, 32, 12, 33, 12, 34, 13, 35, 14, 0, 0, 0, 36, 36, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 15, 10, 7, 11, 1, 37, 16, 38, 1, 39, 4, 40, 8, 41, 8, 42, 3, 43, 3, 44, 7, 45, 17, 46, 8, 47, 18, 0, 0, 0, 48, 48, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 19, 8, 5, 9, 6, 10, 7, 11, 1, 49, 9, 50, 8, 0, 0, 0, 52, 51, -1, 9, 2, 0, 53, 7, 54, 5, 55, 20, 56, 21, 57, 1, 58, 2, 59, 22, 60, 23, 0, 0, 0, 62, 61, 24, 3, 2, 0, 63, 25, 35, 26, 0 </int_array>
+			<int_array  len="225"> 				-1, -1, 1, 0, -1, 34, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 11, 19, 11, 20, 2, 21, 2, 22, 5, 23, 2, 24, 8, 25, 7, 26, 3, 27, 1, 28, 8, 29, 1, 30, 4, 31, 5, 32, 12, 33, 12, 34, 13, 35, 14, 0, 0, 0, 36, 36, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 15, 10, 7, 11, 1, 37, 16, 38, 1, 39, 4, 40, 8, 41, 8, 42, 3, 43, 3, 44, 7, 45, 17, 46, 8, 47, 18, 0, 0, 0, 48, 48, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 19, 8, 5, 9, 6, 10, 7, 11, 1, 49, 9, 50, 8, 0, 0, 0, 52, 51, -1, 9, 2, 0, 53, 7, 54, 5, 55, 20, 56, 21, 57, 1, 58, 2, 59, 22, 60, 23, 0, 0, 0, 62, 61, 24, 19, 2, 0, 7, 25, 9, 26, 63, 27, 64, 28, 65, 2, 66, 5, 67, 29, 68, 30, 69, 5, 70, 31, 71, 5, 72, 32, 73, 33, 74, 2, 75, 2, 76, 34, 77, 35, 35, 36, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="27" shared="false">
+			<array  len="37" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -151,7 +165,7 @@
 				<vector2> 1, 1 </vector2>
 				<int> 0 </int>
 				<bool> False </bool>
-				<resource  resource_type="Shape2D" path="local://1">  </resource>
+				<resource  resource_type="Shape2D" path="local://0">  </resource>
 				<matrix32> 1, -0, 0, 1, 0.486099, -14.8608 </matrix32>
 				<int> 2 </int>
 				<real> -1 </real>
@@ -164,7 +178,7 @@
 						<string> "2D" </string>
 						<dictionary  shared="false">
 							<string> "ofs" </string>
-							<vector2> -65.4508, -28.5239 </vector2>
+							<vector2> -81.6573, -45.9569 </vector2>
 							<string> "snap_grid" </string>
 							<bool> False </bool>
 							<string> "snap_offset" </string>
@@ -184,7 +198,7 @@
 							<string> "snap_step" </string>
 							<vector2> 10, 10 </vector2>
 							<string> "zoom" </string>
-							<real> 14.400328 </real>
+							<real> 10.585566 </real>
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
@@ -304,11 +318,21 @@
 				<rect2> 0, 0, 0, 0 </rect2>
 				<vector2> 0.486099, -14.8608 </vector2>
 				<node_path> ".." </node_path>
-				<resource  resource_type="Animation" path="local://2">  </resource>
+				<resource  resource_type="Animation" path="local://1">  </resource>
 				<array  len="0" shared="false">
 				</array>
 				<string> "" </string>
 				<resource  resource_type="PackedScene" path="res://effects/fire_explosion.xml">  </resource>
+				<vector2> 0.322191, -18.8672 </vector2>
+				<vector2> 0.3, 0.3 </vector2>
+				<int> 50 </int>
+				<real> 3 </real>
+				<real> 60 </real>
+				<real> 80 </real>
+				<real> 9.8 </real>
+				<real> 0.5 </real>
+				<real> 0.3 </real>
+				<color> 0.841378, 0.129412, 0.166722, 1 </color>
 				<vector2_array  len="0"> 					 </vector2_array>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>

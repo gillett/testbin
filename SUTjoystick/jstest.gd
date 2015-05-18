@@ -21,7 +21,6 @@ func _ready():
 	OS.set_window_title("SUTjoystick GUI")
 	JS = get_node("/root/SUTjoystick")
 	JS.disable_fallback_map = true
-	JS.emulate_mouse(true)
 	# connect the disconnect buttons in the Multi view
 	for player in range(1,5):
 		get_node("tabs/Multi/player"+str(player)+"/diagram/btn_deregister").connect("pressed",JS,"deregister_player",[player])
