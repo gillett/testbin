@@ -83,3 +83,4 @@ func _on_Area2D_body_enter( body ):
 	if body.get_name() == 'spike_box':
 		print("DEATH")
 	pass # replace with function body
+	

@@ -5,10 +5,13 @@ extends StaticBody2D
 # operates an electric door; deletes door node(s) when destroyed
 # after being destroyed, a smoldering/sparking animation is played
 
+var bullet_class = preload("res://weapons/bullet.gd")
+
 var STATE_RUNNING = 1
 var STATE_DESTROYED = 0
 
-var MAXHEALTH = 3
+var MAXHEALTH = 10
+var hit_count = 0
 
 var anim = ""
 func _ready():
@@ -24,14 +27,12 @@ func _die():
 	queue_free()
 
 func _on_Area2D_body_enter( body ):
-
 	var new_anim = anim
-	if body.get_name() == "bullet":
-		#print("hit!")
+	if body extends bullet_class:
 		if STATE_RUNNING:
 			_do_damage(1)
-			#new_anim = "hit"
-			get_node("anim").play("hit")
+			if !get_node("anim").is_playing():
+				get_node("anim").play("hit")
 			if MAXHEALTH < 1:
 				get_node("anim").play("die")
 				STATE_DESTROYED = 1

@@ -1,20 +1,19 @@
 
 extends RigidBody2D
 
-# member variables here, example:
-# var a=2
-# var b="textvar"
 var rocket_gun_class = preload("res://rocket_gun.gd")
 var bp = preload("res://effects/fire_explosion.gd")
 var STATE_FIRED = 1
 var STATE_DYING = 0
 var anim = ""
 var obj_state = STATE_FIRED
+var hit_count = 0
 
 var death_pos = Vector2(0,0)
 
 func _die():
 	queue_free()
+
 
 func _integrate_forces(state):
 	var new_anim = anim
@@ -34,11 +33,6 @@ func _integrate_forces(state):
 		get_node("anim").play(anim)
 
 func _ready():
-	# Initialization here
-	var children = get_parent().get_children()
-	for node in children:
-		if (node.get_name() == 'bullet'):
-			PS2D.body_add_collision_exception(node.get_rid(),get_rid()) # make bullet and this not collide			
 	pass
 
 

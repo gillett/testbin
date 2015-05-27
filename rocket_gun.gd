@@ -15,8 +15,8 @@ export var ship_pos = Vector2(0,0)
 var mouseX 
 var mouseY 
 var shooting = false
-var bullet_speed = 800
-var last_shot = .3
+var bullet_speed = 1000
+var last_shot = .2
 
 
 func _fixed_process(delta):
@@ -24,8 +24,8 @@ func _fixed_process(delta):
 	#mouse_pos = get_viewport().get_mouse_pos()
 	
 	# Lerping the speed of the gun allows a more natural feel
-	mouseX = lerp(mouseX, mouse_pos.x, 0.04)
-	mouseY = lerp(mouseY, mouse_pos.y, 0.04)
+	#mouseX = lerp(mouseX, mouse_pos.x, 0.04)
+	#mouseY = lerp(mouseY, mouse_pos.y, 0.04)
 	
 	# Calculate the angle from the ship to the mouse position
 	#gun_angle = ship_pos.angle_to_point(Vector2(mouseX, mouseY)) v1
@@ -42,6 +42,8 @@ func _fixed_process(delta):
 	
 	# Set angle of gun to that of angle calculated 
 	set_rot(gun_angle)
+
+
 	
 	# Not sure if I'll keep this part but we've set 5 nodes to be the location
 	# of the bullet when it is instanced. randi() generates one of those 5 positions
@@ -69,9 +71,7 @@ func _ready():
 	JS = get_node("/root/SUTjoystick")
 	JS.set_deadzone(10)
 	prev_gun_angle = deg2rad(-90)
-	mouseX = 0
-	mouseY = 0 
-	#set_process_input(true)
+	set_process_input(true)
 	set_fixed_process(true)
 	pass
 
@@ -84,10 +84,3 @@ func _input(ev):
    #print("Viewport Resolution is: ",get_viewport_rect().size)
 func _barrel_tip_pos():
 	return barrel_tip_pos
-
-func bullet_explode(pos):
-	var bpi = bullet_particle.instance()
-	bpi.set_scale(0.2,0.2)
-	bpi.set_global_pos(pos)
-	get_parent().get_parent().add_child(bpi)
-	bpi.explode()
