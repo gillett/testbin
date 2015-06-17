@@ -52,8 +52,7 @@ func _integrate_forces(state):
 	var lv = state.get_linear_velocity()
 	var step = state.get_step()
 
-
-	if btn_up.check() == 2 || JS.get_digital("leftstick_up"):
+	if btn_up.check() == 2 || JS.get_digital("leftstick_up") || JS.get_digital("trig_left"):
 		thrusters(-thrust_speed, thrust_acceleration, step)
 		get_node("thrust_on").show()
 	else:
